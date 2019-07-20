@@ -1,0 +1,241 @@
+
+$backgroundColor: #ffffff //lightest
+$primaryColor: #36486b	//darkest
+$secondaryColor: #bb1111 //red like the logo
+$boxShadow: 5px 10px 8px #333333
+$textShadow: 2px 2px 4px #333333
+
+body
+	margin: 0 6%
+	font-family: 'PT Sans Narrow', sans-serif
+
+//================
+//STYLE THE HEADER
+//========================
+
+header
+	padding: 2%
+	background-color: $primaryColor
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: center
+
+#logotop
+	width: 20%
+	height: 55%
+	//border: solid black 2px
+	img
+		width: 100%
+		height: 70%
+
+#bannerone
+	width: 55%
+	//border: solid black 2px
+	img
+		width: 100%
+
+//========================
+//STYLE THE NAVIGATION PANEL
+//===========================
+nav
+	background-color: $secondaryColor
+	ul
+		padding: 1.5%
+		margin: 0 //removes default margin
+		text-align: left
+
+		li
+			list-style-type: none //remove the bulletpoints
+			display: inline
+
+			a
+				color: white
+				font-weight: bold
+				font-size: 2.5vw
+				text-decoration: none //remove underline from the nav bar
+				padding-left: 2% //separate the words from each other
+			a:hover
+				text-shadow: $boxShadow
+
+
+//=====================
+//STYLE THE MAIN
+//=====================
+
+#divone
+	background-image: url("../img/traffic-332857_1920.jpg")
+	background-size: 100% 
+	background-repeat: no-repeat
+	margin: 0
+
+#title
+	margin: 0
+	font-size: 4vw
+	color: $backgroundColor
+	padding: 3.5% 0 0 2.5%
+
+#quote
+	font-size: 5vw
+	margin: 4%
+	color: $secondaryColor
+	text-shadow: $textShadow
+
+#calculator
+	border-top: solid black 2px
+	box-shadow: $boxShadow
+	margin: 0 5.5% 0
+	background-color: rgba(211,211,211, 0.8) //to not affect child elements by opacity use rgba and not opacity:
+	text-align: center
+	position: relative //to make it float on top of #divone
+	top: 25px
+	input
+		outline: none
+		height: 3vw
+		width: 25vw
+		font-size: 2vw //placeholder
+
+#country
+	@extend input
+
+#button
+	margin: 2.5% 0
+	background: $primaryColor
+	border: $primaryColor
+	border-radius: 8px
+	font-weight: bold
+	color: white
+
+#button:hover
+	box-shadow: $boxShadow
+	background-color: $secondaryColor
+	color: white
+
+#print
+	display: none
+	text-align: center
+	margin: 0
+	padding: 4% 0
+	background-color: rgba(98, 87, 80, 0.6)
+	margin-top: 3vw
+	font-size: 5vw
+	text-shadow: $textShadow
+
+#inputfields
+	display: flex
+	flex-flow: row wrap
+	justify-content: center
+	div
+		width: 45%
+		margin-bottom: 2.5%
+	p
+		font-size: 2.5vw
+		margin: 0
+
+#infobox
+	background-color: $backgroundColor
+	text-align: center
+	padding: 6vw 20vw 3vw //no margins to get the effect of the box being under the #calculator
+	h2
+		font-size: 3.5vw
+		color: $primaryColor
+		margin: 3vw 0
+	p
+		font-size: 2.5vw
+
+#divtwo
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+	margin-bottom: 5vw
+	article
+		border-top: solid black 1px
+		width: 40%
+		box-shadow: $boxShadow
+		padding: 0 2vw
+	h3
+		font-size: 3vw
+		color: $primaryColor
+	h4
+		margin: 1vw 0
+		@extend h3
+	p
+		font-size: 2vw
+
+	li
+		@extend p
+
+//=======================
+//STYLE THE FOOTER
+//=======================
+
+footer
+	background-color: $primaryColor
+
+#navbottom
+	background-color: $primaryColor
+	a
+		font-size: 2vw
+
+#logobottom
+	//border: solid black 2px
+	float: right
+	margin-right: 5%
+	width: 20%
+	height: 55%
+	img
+		width: 100%
+		height: 70%
+
+#copyright
+	clear: both
+	font-size: 2vw
+	text-align: center
+	color: white
+	margin: 0
+	padding: 2%
+
+//=================================
+//MEDIA QUERY FOR PHONE
+//==================================
+
+//For screens smaller than 480px
+@media screen and (max-width: 480px)
+
+	//display title in red and in the middle
+	#title
+		font-size: 6vw
+		text-align: center
+		color: $secondaryColor
+		text-shadow: $textShadow
+	
+	//hide the quote
+	#quote
+		display: none
+
+	//chnage the order of the input fields
+	#inputfields
+		display: flex
+		flex-direction: row
+		div
+			width: 100%
+			margin: 0
+		p
+			font-size: 10px
+			margin-top: 2vw
+
+	//adjust the infobox
+	#infobox
+		margin-top: 10% //add margin so it doesnt go under #calculator
+		p
+			display: none
+	
+	//hide the bottom navigation
+	#navbottom
+		display: none
+
+	//adjust the bottom logo
+	#logobottom
+		float: none
+		margin-left: 40%
+
